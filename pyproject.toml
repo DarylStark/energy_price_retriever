@@ -1,0 +1,53 @@
+[build-system]
+requires = ['setuptools>=61.1.0', 'wheel']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = "energy_price_retriever"
+version = "0.0.1"
+description = "Script to retrieve energy prices"
+readme = "README.md"
+authors = [{ name = "Daryl Stark", email = "daryl@dstark.nl" }]
+#license = { file = "LICSENSE" } # License is not figured out yet
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = [
+    "energy_prices",
+    "darylstark",
+    "energyzero",
+    "dynamic_energy_prices",
+]
+dependencies = []
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    'pytest >= 7.3.0',
+    'pycodestyle == 2.10.0',
+    'autopep8 == 2.0.0',
+    'pylint == 2.17.0',
+    'mypy == 1.3.0',
+    'flake8 == 6.0.0',
+    'pydocstyle == 6.3.0',
+]
+
+[project.urls]
+Homepage = 'https://github.com/DarylStark/my_model'
+
+[tool.bumpver]
+current_version = "0.0.1"
+version_pattern = "MAJOR.MINOR.PATCH[-TAG]"
+commit_message = "Version {new_version}"
+commit = true
+tag = false
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+
+[tool.pytest.ini_options]
+pythonpath = "./src/"
+addopts = "-ra -q"
+testpaths = ["tests"]
