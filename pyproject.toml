@@ -49,5 +49,4 @@ push = false
 
 [tool.pytest.ini_options]
 pythonpath = "./src/"
-addopts = "-ra -q"
 testpaths = ["tests"]
